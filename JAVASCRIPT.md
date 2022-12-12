@@ -1,17 +1,139 @@
 # **JAVASCRIPTメモ**
 
-###メソッド###
+### メソッド ###
 
 * addEventLitener()メソッド
 
- *書き方
- 要素.addEventListiner('イベント名', 関数)
-
- *用途
+  * 用途  
  イベント発火の際に実行する関数を定義するメソッド
 
- *例
- window.addEventListener('load', function(){
- })
+  * 書き方  
+ `要素.addEventListiner('イベント名', 関数)`
 
- ページが全て読み込まれた後に関数を実行する。
+
+  * 例  
+  window.addEventListener('load', function(){  
+  })
+
+    (ページが全て読み込まれた後に関数を実行する。)
+
+
+
+* setAttributeメソッド
+
+  * 用途  
+  指定した要素上に新しい属性を追加、または既存の属性の値を変更する。
+
+  * 書き方  
+ `要素.setAttribute(name, value)`  
+   nameは属性の名前を文字列で指定。  
+   valueは属性に設定したい値を指定。
+
+  * 例  
+  ```javascript  
+  const sample = document.getElementById("test")
+
+  sample.setAttribute("style", "color: red;")  
+
+  // <div id="test" style="color: red;">テスト</div> が取得できる
+  ```
+
+
+* removeAttributeメソッド
+
+  * 書き方  
+ 	`要素.removeAttribute(name)`  
+  nameは属性の名前を文字列で指定。
+
+  * 用途  
+ 指定した要素から、特定の属性を削除する。
+
+  * 例  
+  ```javascript
+  const apple = document.getElementById("apple")
+
+  apple.removeAttribute("class")
+  // <div id="apple">りんご</div> が取得できる
+  ```
+
+
+* thisメソッド
+
+  * 用途  
+ イベント発火元となった要素を取得できる。  
+ 使用する場面によって取得できるものが異なる。
+
+
+  * 書き方  
+
+
+  * 例  
+  ```javascript
+  pullDownButton.addEventListener('mouseover', function(){
+
+  pullDownButton.setAttribute("style", "background-color:#FFBEDA;")
+  })
+
+  // これをthisで書き換えると
+   pullDownButton.addEventListener('mouseover', function(){
+    this.setAttribute("style", "background-color:#FFBEDA;")
+  })
+
+  // このように発火元となった要素を取得することができる。
+  ```
+
+
+
+
+* getAttributeメソッド
+
+  * 用途   
+ 要素上の指定した属性の値を戻り値として返す。
+
+  * 書き方  
+  `要素.getAttribute('属性名')`
+  
+
+  * 例  
+  ```javascript
+  (HTML)
+  <div class="contents" id="apple">りんご</div>
+  
+  (JAVASCRIPT)
+  const apple = document.getElementById("apple")
+
+  apple.getAttribute("class")
+  // => contents というclass名が取得できる。
+  ```
+
+* メソッド
+
+  * 用途 
+
+
+  * 書き方  
+  
+  
+
+  * 例  
+  ```javascript
+  
+  
+  
+  ```
+
+* メソッド
+
+  * 用途 
+
+
+  * 書き方  
+  
+  
+
+  * 例  
+  ```javascript
+  
+  
+  
+  ```
