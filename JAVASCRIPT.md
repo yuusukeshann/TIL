@@ -19,6 +19,7 @@
 
 
 
+
 * setAttributeメソッド
 
   * 用途  
@@ -106,22 +107,92 @@
   // => contents というclass名が取得できる。
   ```
 
-* メソッド
+* innerHTMLプロパティ
 
-  * 用途 
-
-
-  * 書き方  
-  
+  * 用途  
+  HTML要素の取得や書き換えを行うことができる。
   
 
-  * 例  
+  * 例・書き方    
   ```javascript
+  (HTML)
+  <div class="contents" id="apple">りんご</div>
   
-  
+  (JAVASCRIPT)
+  const apple = document.getElementById("apple")
+
+  console.log(apple.innerHTML)
+  // => りんご
+
+  apple.innerHTML = "青リンゴ"
+  console.log(apple.innerHTML)
+  // => 青リンゴ
   
   ```
 
+* document.getElementByIdメソッド
+
+  * 用途  
+ 引数に渡したidを持つ要素を取得する。
+
+  * 書き方  
+  document.getElementById("id名")
+  
+
+  * 例  
+  ```javascript
+  //id名がhogeの要素を指定する場合
+  document.getElementById("hoge")
+  ```
+
+
+* document.getElementsByClassNameメソッド
+
+  * 用途  
+  引数に渡したclassを持つ要素を全て取得する。
+  
+
+  * 例・書き方
+  ```javascript
+   //class名がfugaの要素を指定する場合
+
+  document.getElementsByClassName("fuga")
+  ```
+
+
+
+
+  * document.querySelectorAllメソッド
+
+  * 用途  
+  HTML上から引数で指定したセレクタに合致するものと全て取得する。
+ 
+  
+  * 例・書き方   
+  ```javascript
+  //class名がfugaの要素を指定する場合
+  document.querySelectorAll(".fuga")
+
+  //id名がhogeの要素を指定する場合
+  document.querySelectorAll("#hoge")
+  
+  //h1タグの要素を指定する場合
+  document.querySelectorAll("h1")
+
+  //セレクタ名を指定した要素のうち、一番最初に見つかった要素だけ取得
+  document.querySelector("セレクタ名")
+  
+  ```
+
+  * メモ  getElementsByClassNameとquerySelectorAllの違い  
+  
+    どちらも指定したクラスを取得できるメソッドだが、この2つの違いは戻り値にあり、前者はHTMLCollectionというオブジェクトを、後者はNodeListというオブジェクトを戻り値として返す。
+  
+    このHTMLCollectionとNodeListでは使えるメソッドが違う。
+    例えばforEach関数を使用する場合は、NodeListオブジェクトを戻り値として返すquerySelectorAllを使用する。
+
+
+
 * メソッド
 
   * 用途 
@@ -134,6 +205,5 @@
   * 例  
   ```javascript
   
-  
-  
+
   ```
